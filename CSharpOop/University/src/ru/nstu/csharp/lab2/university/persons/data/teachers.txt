@@ -1,0 +1,5 @@
+Grepa Grepovich Grep 01.01.1973 ParallelComputingTechnologies Teacher 27
+Man Manovich Manov 21.09.1967 TheoreticalAndAppliedInformatics Dean 30
+Git Clonovich Cherrypickov 15.10.1997 AppliedMathematics Teacher 4
+Console Clearovich Logoutov 31.12.1972 TheoreticalAndAppliedInformatics Rector 20
+Dotnet Ci Sharpov 04.04.2000 ComputingTechnologies Teacher 1

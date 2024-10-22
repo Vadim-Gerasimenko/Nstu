@@ -5,17 +5,7 @@ namespace lab2.university.persons
     public record Student(string Name, string Patronymic, string LastName,
         DateTime BirthDate, int Course, string Group, float Gpa) : IPerson
     {
-        public int Age
-        {
-            get
-            {
-                var dateTimeNow = DateTime.Now;
-                var age = dateTimeNow.Year - BirthDate.Year;
-
-                if (BirthDate > dateTimeNow.AddYears(-age)) --age;
-                return age;
-            }
-        }
+        public int Age  => CalcAge.GetAge(BirthDate); 
 
         public static Student Parse(string text)
         {
@@ -36,7 +26,7 @@ namespace lab2.university.persons
                 Age: {Age}
                 Course: {Course}
                 Group: {Group}
-                Gpa: {Gpa:F2}
+                Gpa: {Gpa:F3}
 
                 """);
         }

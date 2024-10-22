@@ -4,30 +4,19 @@ using System.Globalization;
 namespace lab2.university.persons
 {
     public record Teacher(string Name, string Patronymic, string LastName,
-        DateTime BirthDate, Departments Department, Staff Post, int Seniority) : IPerson
+        DateTime BirthDate, Staff Post, int Seniority, string Department) : IPerson
     {
-        public int Age
-        {
-            get
-            {
-                var dateTimeNow = DateTime.Now;
-                var age = dateTimeNow.Year - BirthDate.Year;
-
-                if (BirthDate > dateTimeNow.AddYears(-age)) --age;
-                return age;
-            }
-        }
+        public int Age => CalcAge.GetAge(BirthDate); 
 
         public static Teacher Parse(string text)
         {
-            string[] teacherData = text.Split(' ');
+            string[] teacherData = text.Split(" ", 7);
             return new Teacher(
                 teacherData[0], teacherData[1], teacherData[2],
                 DateTime.ParseExact(teacherData[3], "dd.MM.yyyy", CultureInfo.InvariantCulture),
-                (Departments)Enum.Parse(typeof(Departments), teacherData[4]),
-                (Staff)Enum.Parse(typeof(Staff), teacherData[5]),
-                int.Parse(teacherData[6])
-                );
+                Enum.Parse<Staff>(teacherData[4]),
+                int.Parse(teacherData[5]),
+                teacherData[6]);
         }
 
         public override string ToString()

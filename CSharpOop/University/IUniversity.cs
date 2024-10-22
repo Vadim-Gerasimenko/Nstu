@@ -1,5 +1,4 @@
-﻿using lab2.university.enums;
-using lab2.university.persons;
+﻿using lab2.university.persons;
 
 namespace lab2.university
 {
@@ -11,7 +10,6 @@ namespace lab2.university
         void Add(IPerson person);
         void Remove(IPerson person);
         IEnumerable<IPerson> FindByLastName(string lastName);
-        IEnumerable<Student> FindByGpa(float gpa);
-        IEnumerable<Teacher> FindByDepartment(Departments department);
+        IEnumerable<Teacher> FindByDepartment(string department);
     }
 }

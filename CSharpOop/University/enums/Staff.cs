@@ -1,7 +1,7 @@
 ﻿namespace lab2.university.enums
 {
-    public enum Staff : byte
+    public enum Staff
     {
-        Teacher, Dean, Rector
+        Professor, Docent, Lecturer, Assistant
     }
 }

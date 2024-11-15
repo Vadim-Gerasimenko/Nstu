@@ -1,0 +1,319 @@
+File name: ethers09.bin
+File size: 1904
+
+FRAME #1
+0
+MAC (receiver): 00-02-16-09-FA-40
+MAC (sender): 00-90-27-A1-36-D0
+Frame type: Ethernet II (DIX)
+Protocol type: IPv4
+Header length: 20 bytes
+Type of service: 0
+Data length: 52 bytes
+TTL: 64
+Protocol: TCP
+Header checksum: 41706
+IP (sender): 195.62.2.11
+IP (receiver): 81.181.78.206
+Data: 00168C2CE897EC01D3B5EBA08010BF2831F200000101080A3522BCDF0896050B
+
+FRAME #2
+66
+MAC (receiver): 00-02-16-09-FA-40
+MAC (sender): 00-90-27-A1-36-D0
+Frame type: Ethernet II (DIX)
+Protocol type: IPv4
+Header length: 20 bytes
+Type of service: 0
+Data length: 139 bytes
+TTL: 64
+Protocol: TCP
+Header checksum: 30964
+IP (sender): 195.62.2.11
+IP (receiver): 118.165.75.86
+Data: 0019EC61E865E0E62899F2CF5018C0D82AD00000323230207368616D616E2E696E746572666163652E6E736B2E73752045534D54502053656E646D61696C20382E31342E332F382E31342E333B204D6F6E2C203230204F637420323030382031343A34333A3538202B3037303020284E4F565354290D0A
+
+FRAME #3
+219
+MAC (receiver): 00-90-27-A1-36-D0
+MAC (sender): 00-02-16-09-FA-40
+Frame type: Ethernet II (DIX)
+Protocol type: IPv4
+Header length: 20 bytes
+Type of service: 0
+Data length: 104 bytes
+TTL: 51
+Protocol: TCP
+Header checksum: 62303
+IP (sender): 81.181.78.206
+IP (receiver): 195.62.2.11
+Data: 8C2C0016D3B5EBA0E897EC0180180045B5E200000101080A089605493522BCDFD01F729E16AF36EE5320F5232AAE45382A38A873F3641D0A606E70116EB5351E29CE9C01D49095AC5FCE884B2C3F56EED34C2BE3
+
+FRAME #4
+337
+MAC (receiver): 00-02-16-09-FA-40
+MAC (sender): 00-90-27-A1-36-D0
+Frame type: Ethernet II (DIX)
+Protocol type: IPv4
+Header length: 20 bytes
+Type of service: 0
+Data length: 104 bytes
+TTL: 64
+Protocol: TCP
+Header checksum: 41653
+IP (sender): 195.62.2.11
+IP (receiver): 81.181.78.206
+Data: 00168C2CE897EC01D3B5EBD48018BF28F30800000101080A3522BCED0896054940069D58DACF56C4FEC91B353661F70A74143EC709C047605239DD741B25BB4D16ADBCA75CEC1CD212C33CEF9BF73F4D3D912816
+
+FRAME #5
+455
+MAC (receiver): 00-90-27-A1-36-D0
+MAC (sender): 00-02-16-09-FA-40
+Frame type: Ethernet II (DIX)
+Protocol type: IPv4
+Header length: 20 bytes
+Type of service: 0
+Data length: 116 bytes
+TTL: 118
+Protocol: TCP
+Header checksum: 63224
+IP (sender): 84.108.20.237
+IP (receiver): 195.62.2.11
+Data: 0B5500192A86DDF6E8681C995018FECA52C700004D41494C2046524F4D3A3C7879676E666471786940626F6F6C617A2E636F6D3E0D0A5243505420544F3A203C67616C696E6140696E746572666163652E6E736B2E73753E0D0A444154410D0A
+
+FRAME #6
+585
+MAC (receiver): 00-02-16-09-FA-40
+MAC (sender): 00-90-27-A1-36-D0
+Frame type: Ethernet II (DIX)
+Protocol type: IPv4
+Header length: 20 bytes
+Type of service: 0
+Data length: 40 bytes
+TTL: 64
+Protocol: TCP
+Header checksum: 8952
+IP (sender): 195.62.2.11
+IP (receiver): 84.108.20.237
+Data: 00190B55E8681C992A86DE425010C494A3640000
+
+FRAME #7
+639
+MAC (receiver): 00-02-16-09-FA-40
+MAC (sender): 00-90-27-A1-36-D0
+Frame type: Ethernet II (DIX)
+Protocol type: IPv4
+Header length: 20 bytes
+Type of service: 0
+Data length: 67 bytes
+TTL: 255
+Protocol: UDP
+Header checksum: 24357
+IP (sender): 195.62.2.11
+IP (receiver): 192.31.80.30
+Data: ADEB0035002FE6363FDC0000000100000000000106626F6F6C617A03636F6D00001C00010000291000000000000000
+
+FRAME #8
+720
+MAC (receiver): 00-90-27-A1-36-D0
+MAC (sender): 00-02-16-09-FA-40
+Frame type: Ethernet II (DIX)
+Protocol type: IPv4
+Header length: 20 bytes
+Type of service: 0
+Data length: 136 bytes
+TTL: 51
+Protocol: TCP
+Header checksum: 62270
+IP (sender): 81.181.78.206
+IP (receiver): 195.62.2.11
+Data: 8C2C0016D3B5EBD4E897EC3580180045B14400000101080A0896056E3522BCED32FCF5E135361CADE8CEEB602ADD8F22E1876E75C8CE7BBF061E0DEE3DA9BE622F101963BFE57C373D34EB4F390B02078587F8F7D2FC089677B75CBCF855600E8FE6A652F8B00A203FE1274DB795B36633B9E2C7
+
+FRAME #9
+870
+MAC (receiver): 00-02-16-09-FA-40
+MAC (sender): 00-90-27-A1-36-D0
+Frame type: Ethernet II (DIX)
+Protocol type: IPv4
+Header length: 20 bytes
+Type of service: 0
+Data length: 136 bytes
+TTL: 64
+Protocol: TCP
+Header checksum: 41620
+IP (sender): 195.62.2.11
+IP (receiver): 81.181.78.206
+Data: 00168C2CE897EC35D3B5EC288018BED4C00F00000101080A3522BCFE0896056EF2C1A3C9EF6BEA01508068966D8B62098D2B5124B2BC27A6965CA12F9D46D7334273A05CF7B3726F718988A9BD64A5FEDB23F1644BA86C276B9AFADBE366C7DFBE54BE308F2CCE162A14F5635107D3187CDC3861
+
+FRAME #10
+1020
+MAC (receiver): 00-90-27-A1-36-D0
+MAC (sender): 00-02-16-09-FA-40
+Frame type: Ethernet II (DIX)
+Protocol type: IPv4
+Header length: 20 bytes
+Type of service: 0
+Data length: 104 bytes
+TTL: 51
+Protocol: TCP
+Header checksum: 62301
+IP (sender): 81.181.78.206
+IP (receiver): 195.62.2.11
+Data: 8C2C0016D3B5EC28E897EC89801800454F3600000101080A089605973522BCFEB8E48FA571567A8C3A2DE77F87DD039AF1C38023B300AD1B361C7DE89B80808B65B91EFE9D6F11A438208F44674A96BB9CB68615
+
+FRAME #11
+1138
+MAC (receiver): 00-90-27-A1-36-D0
+MAC (sender): 00-02-16-09-FA-40
+Frame type: Ethernet II (DIX)
+Protocol type: IPv4
+Header length: 20 bytes
+Type of service: 0
+Data length: 52 bytes
+TTL: 51
+Protocol: TCP
+Header checksum: 62352
+IP (sender): 81.181.78.206
+IP (receiver): 195.62.2.11
+Data: 8C2C0016D3B5EC5CE897EC8980110045EEE500000101080A089605973522BCFE
+
+FRAME #12
+1204
+MAC (receiver): 00-02-16-09-FA-40
+MAC (sender): 00-90-27-A1-36-D0
+Frame type: Ethernet II (DIX)
+Protocol type: IPv4
+Header length: 20 bytes
+Type of service: 0
+Data length: 52 bytes
+TTL: 64
+Protocol: TCP
+Header checksum: 41703
+IP (sender): 195.62.2.11
+IP (receiver): 81.181.78.206
+Data: 00168C2CE897EC89D3B5EC5D8010BED4304700000101080A3522BD0D08960597
+
+FRAME #13
+1270
+MAC (receiver): 00-90-27-A1-36-D0
+MAC (sender): 00-02-16-09-FA-40
+Frame type: Ethernet II (DIX)
+Protocol type: IPv4
+Header length: 20 bytes
+Type of service: 0
+Data length: 60 bytes
+TTL: 51
+Protocol: TCP
+Header checksum: 65041
+IP (sender): 81.181.78.206
+IP (receiver): 195.62.2.11
+Data: 8D010016D38AE64A00000000A00216D076490000020405B40402080A089605970000000001030307
+
+FRAME #14
+1344
+MAC (receiver): 00-02-16-09-FA-40
+MAC (sender): 00-90-27-A1-36-D0
+Frame type: Ethernet II (DIX)
+Protocol type: IPv4
+Header length: 20 bytes
+Type of service: 0
+Data length: 64 bytes
+TTL: 64
+Protocol: TCP
+Header checksum: 41690
+IP (sender): 195.62.2.11
+IP (receiver): 81.181.78.206
+Data: 00168D01E89DD0F2D38AE64BB012C0500EF800000101080A3522BD0D08960597020405B40103030001010402
+
+FRAME #15
+1422
+MAC (receiver): 00-02-16-09-FA-40
+MAC (sender): 00-90-27-A1-36-D0
+Frame type: Ethernet II (DIX)
+Protocol type: IPv4
+Header length: 20 bytes
+Type of service: 0
+Data length: 52 bytes
+TTL: 64
+Protocol: TCP
+Header checksum: 41701
+IP (sender): 195.62.2.11
+IP (receiver): 81.181.78.206
+Data: 00168C2CE897EC89D3B5EC5D8011BED4304600000101080A3522BD0D08960597
+
+FRAME #16
+1488
+MAC (receiver): 00-90-27-A1-36-D0
+MAC (sender): 00-02-16-09-FA-40
+Frame type: Ethernet II (DIX)
+Protocol type: IPv4
+Header length: 20 bytes
+Type of service: 0
+Data length: 151 bytes
+TTL: 55
+Protocol: UDP
+Header checksum: 28111
+IP (sender): 192.31.80.30
+IP (receiver): 195.62.2.11
+Data: 0035ADEB0083B4CC3FDC8000000100000002000306626F6F6C617A03636F6D00001C0001C00C000200010002A3000015046E7334330D646F6D61696E636F6E74726F6CC013C00C000200010002A3000007046E733434C02DC028000100010002A3000004D845B916C049000100010002A3000004D06DFF160000290200000000000000
+
+FRAME #17
+1653
+MAC (receiver): 00-90-27-A1-36-D0
+MAC (sender): 00-02-16-09-FA-40
+Frame type: Ethernet II (DIX)
+Protocol type: IPv4
+Header length: 20 bytes
+Type of service: 0
+Data length: 71 bytes
+TTL: 61
+Protocol: UDP
+Header checksum: 38186
+IP (sender): 195.62.1.65
+IP (receiver): 195.62.2.11
+Data: 0035CA000033EF66E5AF818200010000000000000234340331353502313802353907696E2D61646472046172706100000C0001
+
+FRAME #18
+1738
+MAC (receiver): 00-02-16-09-FA-40
+MAC (sender): 00-90-27-A1-36-D0
+Frame type: Ethernet II (DIX)
+Protocol type: IPv4
+Header length: 20 bytes
+Type of service: 0
+Data length: 67 bytes
+TTL: 255
+Protocol: UDP
+Header checksum: 36651
+IP (sender): 195.62.2.11
+IP (receiver): 216.69.185.22
+Data: ADEB0035002F65E13F130000000100000000000106626F6F6C617A03636F6D00001C00010000291000000000000000
+
+FRAME #19
+1819
+MAC (receiver): 00-02-16-09-FA-40
+MAC (sender): 00-90-27-A1-36-D0
+Frame type: Ethernet II (DIX)
+Protocol type: IPv4
+Header length: 20 bytes
+Type of service: 0
+Data length: 71 bytes
+TTL: 255
+Protocol: UDP
+Header checksum: 35507
+IP (sender): 195.62.2.11
+IP (receiver): 217.71.128.65
+Data: CA0300350033DADCE5AF010000010000000000000234340331353502313802353907696E2D61646472046172706100000C0001
+
+-------------------------------------
+Frames count: 19
+
+[Types]
+Ethernet 802.2 (LLC): 0
+Ethernet 802.2 (SNAP): 0
+Ethernet 802.3 (Raw/Novell): 0
+Ethernet II (DIX): 19
+	IPv4: 19
+	ARP: 0
+	RARP: 0
+-------------------------------------

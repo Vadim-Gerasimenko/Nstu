@@ -12,6 +12,7 @@ public class ConsoleView implements View {
     public ConsoleView() {
     }
 
+    @Override
     public void setController(Controller controller) {
         this.controller = controller;
     }
@@ -21,47 +22,75 @@ public class ConsoleView implements View {
         if (controller == null) {
             throw new NullPointerException("Controller must be specified");
         }
+
         Scanner scanner = new Scanner(System.in);
 
-        boolean isCorrectAddress = false;
-        InetAddress serverAddress = null;
+        InetAddress serverAddress = getServerAddress(scanner);
+        int port = getPort(scanner);
 
-        while (!isCorrectAddress) {
-            System.out.print("Enter the server address: ");
+        System.out.print("Enter your name: ");
+        String username = scanner.nextLine();
 
+        controller.startModel(serverAddress, port, username);
+
+        String message;
+
+        try {
+            while ((message = scanner.nextLine()) != null) {
+                sendMessage(message);
+            }
+        } catch (Exception e) {
+            System.out.println("You have disconnected from the chat.");
+            System.exit(0);
+        }
+    }
+
+    @Override
+    public void showMessage(String message) {
+        System.out.println(message);
+    }
+
+    @Override
+    public void sendMessage(String message) {
+        controller.sendMessage(message);
+    }
+
+    private InetAddress getServerAddress(Scanner scanner) {
+        while (true) {
             try {
-                serverAddress = InetAddress.getByName(scanner.nextLine());
-                isCorrectAddress = true;
+                System.out.print("Enter the server address: ");
+                InetAddress serverAddress = InetAddress.getByName(scanner.nextLine());
+
+                if (serverAddress == null || serverAddress.getHostAddress().isEmpty()) {
+                    throw new UnknownHostException();
+                }
+
+                return serverAddress;
             } catch (UnknownHostException e) {
                 System.out.println("Error: Unknown server address. Try again.");
             }
         }
+    }
 
-        boolean isCorrectPort = false;
-        int port = 0;
-
-        while (!isCorrectPort) {
-            System.out.print("Enter the port number: ");
-
+    private int getPort(Scanner scanner) {
+        while (true) {
             try {
-                port = scanner.nextInt();
+                System.out.print("Enter the port number: ");
+                int port = scanner.nextInt();
 
                 if (port < 1024 || port > 49151) {
                     throw new IllegalArgumentException("Ports available to users from 1024 to 49151."
                             + " Current port: " + port);
                 }
 
-                isCorrectPort = true;
+                return port;
             } catch (IllegalArgumentException e) {
                 System.out.println("Error: " + e.getMessage() + ". Try again.");
+            } catch (Exception e) {
+                System.out.println("An error occurred while reading int number from console");
+            } finally {
+                scanner.nextLine();
             }
-
-            scanner.nextLine();
         }
-
-        System.out.print("Enter your name: ");
-        String username = scanner.nextLine();
-
-        controller.startModel(serverAddress, port, username);
     }
 }

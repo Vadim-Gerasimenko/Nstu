@@ -6,4 +6,8 @@ public interface View {
     void start();
 
     void setController(Controller controller);
+
+    void showMessage(String message);
+
+    void sendMessage(String message);
 }

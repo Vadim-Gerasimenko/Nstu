@@ -22,10 +22,12 @@ public class Client extends Thread implements User {
         this.activeClients = activeClients;
     }
 
+    @Override
     public Socket getSocket() {
         return socket;
     }
 
+    @Override
     public InetAddress getAddress() {
         return socket.getInetAddress();
     }

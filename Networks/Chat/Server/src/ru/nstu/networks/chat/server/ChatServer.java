@@ -10,9 +10,9 @@ import java.util.*;
 
 public class ChatServer implements Server {
     private final int port;
-    private final InetAddress INET_ADDRESS;
+    private final InetAddress inetAddress;
     private final List<Client> activeClients;
-    private boolean isActive = true;
+    private boolean isRunning = true;
 
     public ChatServer(int port) {
         if (port < 1024 || port > 49151) {
@@ -26,11 +26,11 @@ public class ChatServer implements Server {
         validatePort(port);
 
         this.port = port;
-        INET_ADDRESS = getInetAddress();
+        inetAddress = getInetAddress();
         activeClients = new LinkedList<>();
 
         System.out.println(new InfoMessage(null,
-                ServerTime.getTime(), "A new server has been created at " + INET_ADDRESS
+                ServerTime.getTime(), "A new server has been created at " + inetAddress
                 + ", assigned port: " + port));
     }
 
@@ -38,10 +38,10 @@ public class ChatServer implements Server {
     public void start() {
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             System.out.println(new InfoMessage(null,
-                    ServerTime.getTime(), "Server started at " + INET_ADDRESS
+                    ServerTime.getTime(), "Server started at " + inetAddress
                     + ", port: " + serverSocket.getLocalPort()));
 
-            while (isActive) {
+            while (isRunning) {
                 try {
                     Socket socket = serverSocket.accept();
                     new Client(socket, activeClients).start();
@@ -59,7 +59,7 @@ public class ChatServer implements Server {
 
     @Override
     public void stop() {
-        isActive = false;
+        isRunning = false;
         System.exit(0); //TODO: const
     }
 
@@ -72,7 +72,7 @@ public class ChatServer implements Server {
                     ServerTime.getTime(), "Failed to get server inet-address."));
         }
 
-        System.exit(5); //TODO: status
+        System.exit(4);
         return null;
     }
 

@@ -1,7 +1,5 @@
 ﻿namespace MathematicalExpressions.operations.types.functions.power
 {
     public static class PowerFunctions
-    {
-        public static SquareRoot Sqrt(Expression argument) => new(argument);
-    }
+    { public static Sqrt Sqrt(Expression argument) => new(argument); }
 }

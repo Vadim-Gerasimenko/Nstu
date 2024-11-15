@@ -1,10 +1,8 @@
 ﻿namespace MathematicalExpressions.operations.operands
 {
-    public class Constant : Expression
+    public class Constant(double value) : Expression
     {
-        public double Value { get; }
-
-        public Constant(double value) => Value = value;
+        public double Value { get; } = value;
 
         public override IEnumerable<string> Variables => [];
         public override bool IsConstant => true;

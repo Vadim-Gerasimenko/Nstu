@@ -1,0 +1,15 @@
+-e Group number: 
+Variant: 
+среда, 13 марта 2024 г. 18:14:34 (+07)
+-e 
+MENU:
+1. Replacing spaces with underscores
+2. Exit
+-e 
+MENU:
+1. Replacing spaces with underscores
+2. Exit
+-e 
+MENU:
+1. Replacing spaces with underscores
+2. Exit

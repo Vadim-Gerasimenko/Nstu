@@ -1,12 +1,9 @@
 package ru.nstu.numerical_methods.course_project.solution_area;
 
-import ru.nstu.numerical_methods.course_project.slae.matrix.Slae;
-import ru.nstu.numerical_methods.course_project.slae.matrix.DenseMatrix;
-import ru.nstu.numerical_methods.course_project.slae.matrix.Matrix;
+import ru.nstu.numerical_methods.course_project.slae.matrix.*;
 import ru.nstu.numerical_methods.course_project.slae.matrix.Vector;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.function.BiFunction;
 
 import static ru.nstu.numerical_methods.course_project.solution_area.FiniteElement.EDGE_NODES_COUNT;
@@ -24,39 +21,55 @@ public class SolutionArea {
         this.conditions = conditions;
     }
 
+    static class RowElement {
+        int columnIndex;
+        double value;
+
+        RowElement(int columnIndex, double value) {
+            this.columnIndex = columnIndex;
+            this.value = value;
+        }
+    }
+
     public Slae assembleSlae() {
         int nodesCount = grid.xValues.length * grid.yValues.length;
 
         double[][] matrixComponents = new double[nodesCount][nodesCount];
         double[] vectorComponents = new double[nodesCount];
 
-        FiniteElement[] elements = generateFiniteElements();
+        int yValuesLastIndex = grid.yValues.length - 1;
+        int xValuesLastIndex = grid.xValues.length - 1;
 
-        for (FiniteElement element : elements) {
-            Matrix localMatrix = element.getLocalMatrixCoefficients();
-            Vector localVector = element.getLocalConstantTermsVector();
+        for (int i = 0; i < yValuesLastIndex; ++i) {
+            for (int j = 0; j < xValuesLastIndex; ++j) {
+                FiniteElement element = new FiniteElement(this, j, i);
 
-            Node[] nodes = new Node[NODES_COUNT];
+                Matrix localMatrix = element.getLocalMatrixCoefficients();
+                Vector localVector = element.getLocalConstantTermsVector();
 
-            for (int i = 0, index = 0; i < EDGE_NODES_COUNT; ++i) {
-                for (int j = 0; j < EDGE_NODES_COUNT; ++index, ++j) {
-                    int xIndex = element.xStartIndex + j;
-                    int yIndex = element.yStartIndex + i;
+                Node[] nodes = new Node[NODES_COUNT];
 
-                    nodes[index] = new Node(xIndex, yIndex, getNodeGlobalIndex(xIndex, yIndex));
+                for (int k = 0, index = 0; k < EDGE_NODES_COUNT; ++k) {
+                    int yIndex = element.yStartIndex + k;
+
+                    for (int l = 0; l < EDGE_NODES_COUNT; ++index, ++l) {
+                        int xIndex = element.xStartIndex + l;
+
+                        nodes[index] = new Node(xIndex, yIndex, getNodeGlobalIndex(xIndex, yIndex));
+                    }
                 }
-            }
 
-            for (int i = 0; i < NODES_COUNT; ++i) {
-                vectorComponents[nodes[i].globalIndex] += localVector.getComponent(i);
+                for (int k = 0; k < NODES_COUNT; ++k) {
+                    vectorComponents[nodes[k].globalIndex] += localVector.getComponent(k);
 
-                for (int j = 0; j < NODES_COUNT; ++j) {
-                    matrixComponents[nodes[i].globalIndex][nodes[j].globalIndex] += localMatrix.getComponent(i, j);
+                    for (int l = 0; l < NODES_COUNT; ++l) {
+                        matrixComponents[nodes[k].globalIndex][nodes[l].globalIndex] += localMatrix.getComponent(k, l);
+                    }
                 }
             }
         }
 
-        Matrix matrix = new DenseMatrix(matrixComponents);
+        Matrix matrix = new SparseRowMatrix(matrixComponents);
         Vector vector = new Vector(vectorComponents);
 
         setConditions(matrix, vector);
@@ -174,9 +187,6 @@ public class SolutionArea {
         matrix.resetRow(nodesGlobalIndexes[0]);
         matrix.resetRow(nodesGlobalIndexes[1]);
 
-        //matrix.resetColumn(nodesGlobalIndexes[0]);
-        //matrix.resetColumn(nodesGlobalIndexes[1]);
-
         matrix.setComponent(nodesGlobalIndexes[0], nodesGlobalIndexes[0], 1);
         matrix.setComponent(nodesGlobalIndexes[1], nodesGlobalIndexes[1], 1);
 
@@ -236,19 +246,6 @@ public class SolutionArea {
                         localMatrix.getComponent(j, k));
             }
         }
-    }
-
-    private FiniteElement[] generateFiniteElements() {
-        FiniteElement[] elements = new FiniteElement[(grid.xValues.length - 1) * (grid.yValues.length - 1)];
-
-        for (int i = 0, index = 0; i < grid.yValues.length - 1; ++i) {
-            for (int j = 0; j < grid.xValues.length - 1; ++j) {
-                elements[index] = new FiniteElement(this, j, i);
-                ++index;
-            }
-        }
-
-        return elements;
     }
 
     @Override

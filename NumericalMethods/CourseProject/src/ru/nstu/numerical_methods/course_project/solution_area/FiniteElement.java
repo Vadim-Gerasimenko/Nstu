@@ -28,15 +28,15 @@ class FiniteElement {
 
         subAreaIndex = getSubareaIndex();
 
-        if (!isFictitious()) {
+        if (isSignificant()) {
             lambdaAverage = getNodesFunctionAverage(solutionArea.area.equation.lambda.get(subAreaIndex));
             gammaAverage = getNodesFunctionAverage(solutionArea.area.equation.gamma.get(subAreaIndex));
             functionValues = getFunctionValues(solutionArea.area.equation.rightFunctions.get(subAreaIndex));
         }
     }
 
-    public boolean isFictitious() {
-        return subAreaIndex < 0;
+    public boolean isSignificant() {
+        return subAreaIndex >= 0;
     }
 
     private int getSubareaIndex() {

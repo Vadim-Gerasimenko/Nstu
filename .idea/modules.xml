@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Networks/Chat/Chat.iml" filepath="$PROJECT_DIR$/Networks/Chat/Chat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Networks/Chat/Client/Client.iml" filepath="$PROJECT_DIR$/Networks/Chat/Client/Client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NumericalMethods/CourseProject/CourseProject.iml" filepath="$PROJECT_DIR$/NumericalMethods/CourseProject/CourseProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Networks/FrameAnalysis/FrameAnalysis.iml" filepath="$PROJECT_DIR$/Networks/FrameAnalysis/FrameAnalysis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Networks/Networks.iml" filepath="$PROJECT_DIR$/Networks/Networks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Nstu.iml" filepath="$PROJECT_DIR$/.idea/Nstu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NumericalMethods/NumericalMethods.iml" filepath="$PROJECT_DIR$/NumericalMethods/NumericalMethods.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Networks/Chat/Server/Server.iml" filepath="$PROJECT_DIR$/Networks/Chat/Server/Server.iml" />
+    </modules>
+  </component>
+</project>

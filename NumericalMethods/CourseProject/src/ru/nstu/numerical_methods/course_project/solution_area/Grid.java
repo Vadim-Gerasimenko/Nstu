@@ -18,6 +18,14 @@ public class Grid {
         }
     }
 
+    public double[] getXValues() {
+        return xValues;
+    }
+
+    public double[] getYValues() {
+        return yValues;
+    }
+
     private double[] getIntervalsBorders(Scanner scanner, double[] sourceValues) {
         int totalBordersQuantity = 0;
         int subareasCount = sourceValues.length - 1;

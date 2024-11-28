@@ -63,5 +63,15 @@ public class Main {
 
         System.out.printf(slae + "%n%n");
         System.out.println("Result: " + result);
+
+        double[] xValues = grid.getXValues();
+        double[] yValues = grid.getYValues();
+
+        for (int i = 0, index = 0; i < yValues.length; ++i) {
+            for (int j = 0; j < xValues.length; ++index, ++j) {
+                System.out.println("In point  (" + xValues[j] + "; " + yValues[i] + ") = "
+                        + String.format("%.15f", result.getComponent(index)));
+            }
+        }
     }
 }

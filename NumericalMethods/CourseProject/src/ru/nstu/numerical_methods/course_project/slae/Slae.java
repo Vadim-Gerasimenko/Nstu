@@ -1,4 +1,4 @@
-package ru.nstu.numerical_methods.course_project.slae.matrix;
+package ru.nstu.numerical_methods.course_project.slae;
 
 public class Slae {
     private final Matrix systemCoefficients;
@@ -9,67 +9,13 @@ public class Slae {
         this.constantTerms = constantTerms;
     }
 
-    public Matrix getSystemCoefficients() {
-        return systemCoefficients;
-    }
-
-    public Vector getConstantTerms() {
-        return constantTerms;
-    }
-
-    public static Vector solveByConjugateGradientMethod(Matrix A, Vector b) {
-        int size = b.getSize();
-
-        Vector result = new Vector(size);
-        Vector residual = new Vector(b);
-        Vector direction = new Vector(residual);
-
-        double residualSquaredNorm = Vector.getDotProduct(residual, residual);
-
-        for (int k = 0; k < size; ++k) {
-            Vector Ap = A.multiplyByVector(direction);
-            double alpha = residualSquaredNorm / Vector.getDotProduct(direction, Ap);
-
-            for (int i = 0; i < size; i++) {
-                result.components[i] += alpha * direction.components[i];
-            }
-
-            for (int i = 0; i < size; i++) {
-                residual.components[i] -= alpha * Ap.components[i];
-            }
-
-            double newResidualSquaredNorm = Vector.getDotProduct(residual, residual);
-
-            if (Double.valueOf(Math.sqrt(newResidualSquaredNorm) / b.getLength()).equals(0.)) {
-                break;
-            }
-
-            double beta = newResidualSquaredNorm / residualSquaredNorm;
-
-            for (int i = 0; i < size; i++) {
-                direction.components[i] = residual.components[i] + beta * direction.components[i];
-            }
-
-            residualSquaredNorm = newResidualSquaredNorm;
-        }
-
-        return result;
-    }
-
     public Vector solve() {
-        return solveByLocallyOptimalScheme();
-    }
-
-    public Vector solveByConjugateGradientMethod() {
-        return solveByConjugateGradientMethod(systemCoefficients, constantTerms);
-    }
-
-    public Vector solveByLocallyOptimalScheme() {
         return solveByLocallyOptimalScheme(systemCoefficients, constantTerms);
     }
 
     public static Vector solveByLocallyOptimalScheme(Matrix A, Vector b) {
         int size = b.getSize();
+        int iteration = 0;
 
         Vector result = new Vector(size);
         Vector residual = new Vector(b);
@@ -103,7 +49,8 @@ public class Slae {
                         + beta * auxiliaryVector.components[i];
             }
 
-        } while (!Double.valueOf(Vector.getDotProduct(residual, residual)).equals(0.));
+            ++iteration;
+        } while (!Double.valueOf(Vector.getDotProduct(residual, residual)).equals(0.) && iteration < 1000);
 
         return result;
     }

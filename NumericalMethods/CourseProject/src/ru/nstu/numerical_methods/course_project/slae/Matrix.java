@@ -1,4 +1,4 @@
-package ru.nstu.numerical_methods.course_project.slae.matrix;
+package ru.nstu.numerical_methods.course_project.slae;
 
 public interface Matrix {
     int getRowsCount();
@@ -9,17 +9,17 @@ public interface Matrix {
 
     void setComponent(int rowIndex, int columnIndex, double component);
 
+    Vector getRow(int index);
+
     void resetRow(int index);
 
     void resetColumn(int index);
+
+    void add(Matrix matrix);
 
     DenseMatrix assemble();
 
     void increaseComponent(int rowIndex, int columnIndex, double component);
 
     Vector multiplyByVector(Vector vector);
-
-    void add(Matrix matrix);
-
-    Vector getRow(int index);
 }

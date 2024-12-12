@@ -1,6 +1,6 @@
 package ru.nstu.numerical_methods.course_project.solution_area;
 
-import ru.nstu.numerical_methods.course_project.slae.matrix.DenseMatrix;
+import ru.nstu.numerical_methods.course_project.slae.DenseMatrix;
 
 import java.io.File;
 import java.io.FileNotFoundException;

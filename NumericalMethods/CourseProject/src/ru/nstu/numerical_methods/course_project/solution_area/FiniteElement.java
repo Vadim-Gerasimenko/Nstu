@@ -1,8 +1,8 @@
 package ru.nstu.numerical_methods.course_project.solution_area;
 
-import ru.nstu.numerical_methods.course_project.slae.matrix.DenseMatrix;
-import ru.nstu.numerical_methods.course_project.slae.matrix.Matrix;
-import ru.nstu.numerical_methods.course_project.slae.matrix.Vector;
+import ru.nstu.numerical_methods.course_project.slae.DenseMatrix;
+import ru.nstu.numerical_methods.course_project.slae.Matrix;
+import ru.nstu.numerical_methods.course_project.slae.Vector;
 
 import java.util.function.BiFunction;
 

@@ -1,4 +1,4 @@
-package ru.nstu.numerical_methods.course_project.slae.matrix;
+package ru.nstu.numerical_methods.course_project.slae;
 
 import java.util.Arrays;
 

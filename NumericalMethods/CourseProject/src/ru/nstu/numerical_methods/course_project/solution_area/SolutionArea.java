@@ -1,7 +1,7 @@
 package ru.nstu.numerical_methods.course_project.solution_area;
 
-import ru.nstu.numerical_methods.course_project.slae.matrix.*;
-import ru.nstu.numerical_methods.course_project.slae.matrix.Vector;
+import ru.nstu.numerical_methods.course_project.slae.*;
+import ru.nstu.numerical_methods.course_project.slae.Vector;
 
 import java.util.*;
 import java.util.function.BiFunction;
@@ -19,16 +19,6 @@ public class SolutionArea {
         this.area = area;
         this.grid = grid;
         this.conditions = conditions;
-    }
-
-    static class RowElement {
-        int columnIndex;
-        double value;
-
-        RowElement(int columnIndex, double value) {
-            this.columnIndex = columnIndex;
-            this.value = value;
-        }
     }
 
     public Slae assembleSlae() {

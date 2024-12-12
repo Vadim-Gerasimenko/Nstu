@@ -1,4 +1,4 @@
-package ru.nstu.numerical_methods.course_project.slae.matrix;
+package ru.nstu.numerical_methods.course_project.slae;
 
 import java.util.Arrays;
 
@@ -25,34 +25,6 @@ public class SparseRowMatrix implements Matrix {
         }
 
         columnsCount = maxIndex + 1;
-    }
-
-    public SparseRowMatrix(DenseMatrix matrix) {
-        rowsCount = matrix.getRowsCount();
-        columnsCount = matrix.getColumnsCount();
-        int maxNodesCount = rowsCount * columnsCount;
-
-        values = new double[maxNodesCount];
-        columnsIndexes = new int[maxNodesCount];
-        pointers = new int[rowsCount + 1];
-
-        for (int i = 0, index = 0; i < rowsCount; ++i) {
-            pointers[i + 1] = pointers[i];
-
-            for (int j = 0; j < columnsCount; ++j) {
-                double component = matrix.rows[i].components[j];
-
-                if (Double.compare(component, 0) != 0) {
-                    values[index] = component;
-                    columnsIndexes[index] = j;
-                    ++pointers[i + 1];
-                    ++index;
-                }
-            }
-        }
-
-        values = Arrays.copyOf(values, pointers[rowsCount]);
-        columnsIndexes = Arrays.copyOf(columnsIndexes, pointers[rowsCount]);
     }
 
     public SparseRowMatrix(double[][] components) {
